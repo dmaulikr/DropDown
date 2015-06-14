@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--settingPushupController-->
+        <scene sceneID="ye7-IG-UKh">
+            <objects>
+                <controller identifier="settingPushupController" id="dgd-7d-SqG" customClass="SetPushupInterfaceController" customModule="Drop_Down_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="How many pushups can you do without resting?" numberOfLines="0" id="67C-HC-Txo"/>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" id="WeR-vw-DsA"/>
+                        <slider width="1" alignment="left" value="10" maximum="49" steps="49" id="bRh-Zk-Vmc">
+                            <connections>
+                                <action selector="onPushUpSliderValuePressed:" destination="dgd-7d-SqG" id="HHu-3N-otH"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="left" title="Confirm" id="OoM-hn-ifv">
+                            <connections>
+                                <action selector="onConfirmButtonPressed" destination="dgd-7d-SqG" id="ZtT-hc-j5a"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="confirmButton" destination="OoM-hn-ifv" id="xe0-s2-5fY"/>
+                        <outlet property="pushUpLabel" destination="WeR-vw-DsA" id="COv-Ze-3Xi"/>
+                        <outlet property="pushUpSlider" destination="bRh-Zk-Vmc" id="m1x-OW-q56"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="163" y="72"/>
+        </scene>
+        <!--Home Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="HomeInterfaceController" customModule="Drop_Down_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Your next goal:" textAlignment="center" id="4Ec-ON-tdq"/>
+                        <label width="1" alignment="left" text="10" textAlignment="center" id="PE8-Op-wq3">
+                            <fontDescription key="font" type="system" pointSize="35"/>
+                        </label>
+                        <label width="1" alignment="left" text="pushups" textAlignment="center" id="8gf-5y-vzx">
+                            <fontDescription key="font" type="system" pointSize="21"/>
+                        </label>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Let's do it!" id="Qec-Q1-hQD">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                        </button>
+                    </items>
+                    <menu key="menu" id="lJR-UU-qiR">
+                        <items>
+                            <menuItem title="Set Pushups" icon="info" id="CgQ-l7-6rk">
+                                <connections>
+                                    <action selector="setPushUpsTapped" destination="AgC-eL-Hgc" id="KXG-P2-q3b"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="doItButton" destination="Qec-Q1-hQD" id="Nbw-zW-UIk"/>
+                        <outlet property="pushUpQuantityLabel" destination="PE8-Op-wq3" id="Emk-zb-5iq"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="163" y="341"/>
+        </scene>
+    </scenes>
+</document>
